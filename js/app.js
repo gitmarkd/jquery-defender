@@ -40,6 +40,21 @@ $(document).ready(function () {
             $('.ryu-throwing').hide();
             $('.ryu-ready').show();
         });
+
+    $(document).on('keypress', function (e) {
+            if (e.keyCode == 120) {
+                $('.ryu-still').hide();
+                $('.ryu-ready').hide();
+                $('.ryu-cool').show();
+            }
+        })
+        .on('keyup', function (e) {
+            if (e.keyCode == 88) {
+                $('.ryu-still').show();
+                $('.ryu-cool').hide();
+                $('.ryu-ready').hide();
+            }
+        })
 });
 
 function playHadouken() {
