@@ -101,13 +101,13 @@ Content styles (Main Module)
 
 .how-to-play {
     float: right;
-    margin: 50px 50px 350px 0px;
+    margin: 50px 150px 350px 0px;
 }
 
 .how-to-play p {
-    width: 60%;
+    width: 50%;
     color: #5c3c30;
-    font-size: 40px;
+    font-size: 35px;
     font-family: 'UnifrakturCook', cursive;
     text-align: center;
 }
