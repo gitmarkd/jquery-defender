@@ -36,21 +36,9 @@ body {
 .ryu-ready,
 .ryu-still,
 .ryu-throwing {
+    display: none;
     width: 659px;
     height: 494px;
-}
-
-.ryu-cool,
-.ryu-ready,
-.ryu-throwing {
-    display: none;
-}
-
-.ryu-cool,
-.hadouken,
-.ryu-ready,
-.ryu-still,
-.ryu-throwing {
     background-repeat: no-repeat;
 }
 
@@ -98,10 +86,11 @@ Content styles (Main Module)
 }
 
 .hadouken {
+    display: none;
     background-image: url('../images/hadouken.gif');
+    background-repeat: no-repeat;
     width: 156px;
     height: 90px;
-    display: none;
     position: absolute;
     z-index: 10;
     top: 167px;

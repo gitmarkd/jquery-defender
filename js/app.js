@@ -1,27 +1,23 @@
-/*
-Page loads
-Ryu is standing still
-Mouseenter  Ryu - shifts to ready pose
-Mouseleave - return to still
-Mousedown, leans forward and throws a Hadouken
-Remains in pose until Mouseup - return to his ready pose
-Keydown "x", Ryu assumes "looking cool" pose
-Keyup "x" (keyup) - returns to ready pose
-*/
 $(document).ready(function () {
+    /* default state: hide all and show still */
+    $('.ryu-action').hide();
+
+    $('.ryu-still').show();
+
+    /* */
     $('.ryu').mouseenter(function () {
-            $('.ryu-still').hide();
+            $('.ryu-action').hide(); // hide all
             $('.ryu-ready').show();
         })
         .mouseleave(function () {
-            $('.ryu-ready').hide();
+            $('.ryu-action').hide();
             $('.ryu-still').show();
         })
         .mousedown(function () {
             // play hadouken sound
             playHadouken();
 
-            $('.ryu-ready').hide();
+            $('.ryu-action').hide();
             $('.ryu-throwing').show();
 
             // animate hadouken to the right of the screen
@@ -37,28 +33,26 @@ $(document).ready(function () {
                 );
         })
         .mouseup(function () {
-            $('.ryu-throwing').hide();
+            $('.ryu-action').hide();
             $('.ryu-ready').show();
         });
 
-    $(document).on('keypress', function (e) {
-            if (e.keyCode == 120) {
-                $('.ryu-still').hide();
-                $('.ryu-ready').hide();
+    $(document).on('keydown', function (e) {
+            if (e.keyCode == 88) {
+                $('.ryu-action').hide();
                 $('.ryu-cool').show();
             }
         })
         .on('keyup', function (e) {
             if (e.keyCode == 88) {
+                $('.ryu-action').hide();
                 $('.ryu-still').show();
-                $('.ryu-cool').hide();
-                $('.ryu-ready').hide();
             }
         })
 });
 
 function playHadouken() {
-    $('#hadouken-sound')[0].volume = 0.5;
+    $('#hadouken-sound')[0].volume = 0.2;
     $('#hadouken-sound')[0].load();
     $('#hadouken-sound')[0].play();
 }
